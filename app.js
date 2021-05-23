@@ -21,7 +21,8 @@ const app = express()
 
 app.get('/', (req, res) => {
   res.send(`
-    <h2>Take a look at the network tab in devtools</h2>
+    <h2>Take a look at the network tab in devtools.</h2>
+    <p><strong>Node Version:</strong>${process.env.NODE_VERSION}</p>
     <script>
         function loops(func) {
           return func().then(_ => setTimeout(loops, 20, func))
@@ -43,6 +44,10 @@ app.get('/api/tick', (req, res) => {
 
 app.get('/api/end', () => process.exit())
 
-app.listen(8080, () => {
-  console.log(`go to http://localhost:8080/ to generate traffic`)
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+  if (!process.env.SILENT_START) {
+    console.log(`go to http://localhost:${port}/ to generate traffic`);
+  }
 })
