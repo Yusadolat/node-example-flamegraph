@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  node_8x:
+    build: 
+      context: ./
+      dockerfile: node_8.Dockerfile
+    privileged: true
+    ports:
+        - '8080:8080'
+    environment:
+        PORT: 8080
+    volumes:
+      - ./flame-external.sh:/usr/src/app/flame-external.sh
+      - ./flame-internal.sh:/usr/src/app/flame-internal.sh
+      - ./out:/usr/src/app/out
+      - ./app.js:/usr/src/app/app.js
+  node_12x:
+    build: 
+      context: ./
+      dockerfile: node_12.Dockerfile
+    privileged: true
+    ports:
+        - '8082:8082'
+    environment:
+        PORT: 8082
+    volumes:
+      - ./flame-external.sh:/usr/src/app/flame-external.sh
+      - ./flame-internal.sh:/usr/src/app/flame-internal.sh
+      - ./out:/usr/src/app/out
+      - ./app.js:/usr/src/app/app.js
+  node_14x:
+    build: 
+      context: ./
+      dockerfile: node_14.Dockerfile
+    privileged: true
+    ports:
+        - '8083:8083'
+    environment:
+        PORT: 8083
+    volumes:
+      - ./flame-external.sh:/usr/src/app/flame-external.sh
+      - ./flame-internal.sh:/usr/src/app/flame-internal.sh
+      - ./out:/usr/src/app/out
+      - ./app.js:/usr/src/app/app.js
