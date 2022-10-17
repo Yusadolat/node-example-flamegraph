@@ -1,27 +1,4 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" width="1200" height="118" onload="init(evt)" viewBox="0 0 1200 118" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<!-- Flame graph stack visualization. See https://github.com/brendangregg/FlameGraph for latest version, and http://www.brendangregg.com/flamegraphs.html for examples. -->
-<!-- NOTES:  -->
-<defs>
-	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
-		<stop stop-color="#eeeeee" offset="5%" />
-		<stop stop-color="#eeeeb0" offset="95%" />
-	</linearGradient>
-</defs>
-<style type="text/css">
-	text { font-family:Verdana; font-size:12px; fill:rgb(0,0,0); }
-	#search, #ignorecase { opacity:0.1; cursor:pointer; }
-	#search:hover, #search.show, #ignorecase:hover, #ignorecase.show { opacity:1; }
-	#subtitle { text-anchor:middle; font-color:rgb(160,160,160); }
-	#title { text-anchor:middle; font-size:17px}
-	#unzoom { cursor:pointer; }
-	#frames > *:hover { stroke:black; stroke-width:0.5; cursor:pointer; }
-	.hide { display:none; }
-	.parent { opacity:0.5; }
-</style>
-<script type="text/ecmascript">
-<![CDATA[
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="118" onload="init(evt)" version="1.1" viewBox="0 0 1200 118"><defs><linearGradient id="background" x1="0" x2="0" y1="0" y2="1"><stop offset="5%" stop-color="#eee"/><stop offset="95%" stop-color="#eeeeb0"/></linearGradient></defs><style type="text/css">text { font-family:Verdana; font-size:12px; fill:rgb(0,0,0); } #search, #ignorecase { opacity:0.1; cursor:pointer; } #search:hover, #search.show, #ignorecase:hover, #ignorecase.show { opacity:1; } #subtitle { text-anchor:middle; font-color:rgb(160,160,160); } #title { text-anchor:middle; font-size:17px} #unzoom { cursor:pointer; } #frames &gt; *:hover { stroke:black; stroke-width:0.5; cursor:pointer; } .hide { display:none; } .parent { opacity:0.5; }</style><script type="text/ecmascript"><![CDATA[
 	"use strict";
 	var details, searchbtn, unzoombtn, matchedtxt, svg, searching, currentSearchTerm, ignorecase, ignorecaseBtn;
 	function init(evt) {
@@ -362,35 +339,4 @@
 		if (pct != 100) pct = pct.toFixed(1)
 		matchedtxt.firstChild.nodeValue = "Matched: " + pct + "%";
 	}
-]]>
-</script>
-<rect x="0.0" y="0" width="1200.0" height="118.0" fill="url(#background)"  />
-<text id="title" x="600.00" y="24" >Flame Graph</text>
-<text id="details" x="10.00" y="101" > </text>
-<text id="unzoom" x="10.00" y="24" class="hide">Reset Zoom</text>
-<text id="search" x="1090.00" y="24" >Search</text>
-<text id="ignorecase" x="1174.00" y="24" >ic</text>
-<text id="matched" x="1090.00" y="101" > </text>
-<g id="frames">
-<g >
-<title>node (6,425 samples, 100.00%)</title><rect x="10.0" y="53" width="1180.0" height="15.0" fill="rgb(233,44,9)" rx="2" ry="2" />
-<text  x="13.00" y="63.5" >node</text>
-</g>
-<g >
-<title>get /usr/src/app/node_modules/fast-levenshtein/levenshtein.js:27 (4,339 samples, 67.53%)</title><rect x="391.3" y="37" width="796.9" height="15.0" fill="rgb(241,226,29)" rx="2" ry="2" />
-<text  x="394.27" y="47.5" >get /usr/src/app/node_modules/fast-levenshtein/levenshtein.js:27</text>
-</g>
-<g >
-<title>normalizeString path.js:52 (10 samples, 0.16%)</title><rect x="1188.2" y="37" width="1.8" height="15.0" fill="rgb(223,8,45)" rx="2" ry="2" />
-<text  x="1191.16" y="47.5" ></text>
-</g>
-<g >
-<title>all (6,425 samples, 100%)</title><rect x="10.0" y="69" width="1180.0" height="15.0" fill="rgb(211,41,12)" rx="2" ry="2" />
-<text  x="13.00" y="79.5" ></text>
-</g>
-<g >
-<title>RegExp:^ (1 samples, 0.02%)</title><rect x="391.1" y="37" width="0.2" height="15.0" fill="rgb(240,197,9)" rx="2" ry="2" />
-<text  x="394.09" y="47.5" ></text>
-</g>
-</g>
-</svg>
+]]></script><rect width="1200" height="118" x="0" y="0" fill="url(#background)"/><text id="title" x="600" y="24">Flame Graph</text><text id="unzoom" x="10" y="24" class="hide">Reset Zoom</text><text id="search" x="1090" y="24">Search</text><text id="ignorecase" x="1174" y="24">ic</text><g id="frames"><g><title>node (6,425 samples, 100.00%)</title><rect width="1180" height="15" x="10" y="53" fill="#E92C09" rx="2" ry="2"/><text x="13" y="63.5">node</text></g><g><title>get /usr/src/app/node_modules/fast-levenshtein/levenshtein.js:27 (4,339 samples, 67.53%)</title><rect width="796.9" height="15" x="391.3" y="37" fill="#F1E21D" rx="2" ry="2"/><text x="394.27" y="47.5">get /usr/src/app/node_modules/fast-levenshtein/levenshtein.js:27</text></g><g><title>normalizeString path.js:52 (10 samples, 0.16%)</title><rect width="1.8" height="15" x="1188.2" y="37" fill="#DF082D" rx="2" ry="2"/></g><g><title>all (6,425 samples, 100%)</title><rect width="1180" height="15" x="10" y="69" fill="#D3290C" rx="2" ry="2"/></g><g><title>RegExp:^ (1 samples, 0.02%)</title><rect width=".2" height="15" x="391.1" y="37" fill="#F0C509" rx="2" ry="2"/></g></g></svg>
